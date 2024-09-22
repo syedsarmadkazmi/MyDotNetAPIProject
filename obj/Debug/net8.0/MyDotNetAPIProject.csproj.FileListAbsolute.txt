@@ -33,3 +33,4 @@
 /Users/sarmadkazmi/Learning/DotNET/MyDotNetAPIProject/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.dll
 /Users/sarmadkazmi/Learning/DotNET/MyDotNetAPIProject/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll
 /Users/sarmadkazmi/Learning/DotNET/MyDotNetAPIProject/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.InMemory.dll
+/Users/sarmadkazmi/Learning/DotNET/MyDotNetAPIProject/obj/Debug/net8.0/MyDotNetAPIProject.sourcelink.json
