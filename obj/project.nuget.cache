@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "6z04c09HqCQ=",
+  "dgSpecHash": "GgoxQj2xG0w=",
   "success": true,
   "projectFilePath": "/Users/sarmadkazmi/Learning/DotNET/MyDotNetAPIProject/MyDotNetAPIProject.csproj",
   "expectedPackageFiles": [
+    "/Users/sarmadkazmi/.nuget/packages/microsoft.aspnetcore.mvc.versioning/5.1.0/microsoft.aspnetcore.mvc.versioning.5.1.0.nupkg.sha512",
     "/Users/sarmadkazmi/.nuget/packages/microsoft.entityframeworkcore/8.0.8/microsoft.entityframeworkcore.8.0.8.nupkg.sha512",
     "/Users/sarmadkazmi/.nuget/packages/microsoft.entityframeworkcore.abstractions/8.0.8/microsoft.entityframeworkcore.abstractions.8.0.8.nupkg.sha512",
     "/Users/sarmadkazmi/.nuget/packages/microsoft.entityframeworkcore.analyzers/8.0.8/microsoft.entityframeworkcore.analyzers.8.0.8.nupkg.sha512",

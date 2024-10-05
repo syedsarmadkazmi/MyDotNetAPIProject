@@ -19,9 +19,43 @@ namespace MyApp.Namespace
 
         // GET: api/<ProductsController>
         [HttpGet]
-        public async Task<ActionResult> GetAllProducts()
+        public async Task<ActionResult> GetAllProducts([FromQuery] ProductQueryParameters queryParameters)
         {
-            return Ok(await _context.Products.ToArrayAsync());
+            IQueryable<Product> products = _context.Products;
+
+            // Filter by minimum price
+            if (queryParameters.MinPrice != null) 
+            {
+                products = products.Where(p => p.Price >= queryParameters.MinPrice.Value);
+            }
+
+            // Filter by maximum price
+            if (queryParameters.MaxPrice != null) 
+            {
+                products = products.Where(p => p.Price <= queryParameters.MaxPrice.Value);
+            }
+
+            //case sensitive search
+            if(!string.IsNullOrEmpty(queryParameters.Sku)) {
+                products = products.Where(p => p.Sku == queryParameters.Sku);
+            }
+
+            //case insensitive search
+            if(!string.IsNullOrEmpty(queryParameters.Name)) {
+                products = products.Where(p => p.Name.ToLower().Contains(queryParameters.Name.ToLower()));
+            }
+
+            if(!string.IsNullOrEmpty(queryParameters.SortBy)) {
+                if(typeof(Product).GetProperty(queryParameters.SortBy) != null) {
+                    products = products.CustomSortBy(queryParameters.SortBy, queryParameters.SortOrder);
+                }
+            }
+
+            // Apply pagination
+            products = products.Skip(queryParameters.Size * (queryParameters.Page - 1))
+                            .Take(queryParameters.Size);
+
+            return Ok(await products.ToArrayAsync());
         }
 
         // GET api/<ProductsController>/5
